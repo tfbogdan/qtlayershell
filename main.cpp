@@ -26,12 +26,14 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
 
 	QtLayerShell::LayerView view(
-			QtLayerShell::LayerView::layer_top,
+			QtLayerShell::LayerView::layer_bottom,
 			QString::fromUtf8("demo"));
-	view.setAnchor(QtLayerShell::LayerView::anchor_top
+	view.setAnchor(QtLayerShell::LayerView::anchor_bottom
 			| QtLayerShell::LayerView::anchor_left
 			| QtLayerShell::LayerView::anchor_right);
 	view.setExclusiveZone(20);
+	view.setMargin(0, 100, 0, 100);
+	view.setKeyboardInteractivity(true);
 
     view.setResizeMode(QQuickView::SizeRootObjectToView);
     view.setSource(QUrl("qrc:/hello.qml"));

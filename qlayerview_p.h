@@ -46,9 +46,15 @@ private:
 	void apply();
 
 	uint32_t m_layer;
-	uint32_t m_anchor;
-	int32_t m_exclusive_zone;
 	QString m_layer_namespace;
+
+	uint32_t m_anchor = 0;
+	int32_t m_exclusive_zone = 0;
+	bool m_keyboard_interactivity = false;
+	struct {
+		int32_t top = 0, right = 0, bottom = 0, left = 0;
+	} m_margin;
+
 	QWaylandLayerSurface *m_layer_surface = NULL;
 
 	friend class QWaylandLayerSurface;
