@@ -19,14 +19,23 @@
 
 #include <QGuiApplication>
 #include <QQuickView>
+#include "qlayerview_p.h"
 
-int main (int argc, char *argv[])
+int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
 
-    QQuickView view;
+	QtLayerShell::LayerView view(
+			QtLayerShell::LayerView::layer_top,
+			QString::fromUtf8("demo"));
+	view.setAnchor(QtLayerShell::LayerView::anchor_top
+			| QtLayerShell::LayerView::anchor_left
+			| QtLayerShell::LayerView::anchor_right);
+	view.setExclusiveZone(20);
+
     view.setResizeMode(QQuickView::SizeRootObjectToView);
     view.setSource(QUrl("qrc:/hello.qml"));
+	view.setHeight(20);
     view.show();
 
     return app.exec();
