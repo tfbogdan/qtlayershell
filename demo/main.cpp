@@ -1,6 +1,18 @@
 #include <QGuiApplication>
 #include <QQuickView>
 #include <QtLayerShell/LayerView>
+#include <stdint.h>
+
+class DemoView : public QQuickView, public QtLayerShell::LayerView
+{
+public:
+	DemoView(uint32_t layer, const QString layer_namespace)
+		: QtLayerShell::LayerView(layer, layer_namespace)
+	{
+		setFlags(Qt::BypassWindowManagerHint | Qt::FramelessWindowHint);
+	}
+};
+
 
 int main(int argc, char *argv[])
 {
@@ -9,7 +21,7 @@ int main(int argc, char *argv[])
 
     QGuiApplication app(argc, argv);
 
-	QtLayerShell::LayerView view(
+	DemoView view(
 			QtLayerShell::LayerView::layer_bottom,
 			QString::fromUtf8("demo"));
 	view.setAnchor(QtLayerShell::LayerView::anchor_bottom

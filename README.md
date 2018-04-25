@@ -6,9 +6,9 @@ Wayland extension protocol.
 
 ## Usage
 
-`QtLayerShell/LayerView` is the primary entry point to this library. Review the
-header for its usage. It is a superclass of `QQuickView`. An example is
-available in the `demo` directory.
+`QtLayerShell/LayerView` is the primary entry point to this library, and your
+`QWindow` should be a class which derives from it. Review the header for its
+usage. An example is available in the `demo` directory.
 
 **Note**
 

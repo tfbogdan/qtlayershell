@@ -31,6 +31,7 @@ LayerSurface::LayerSurface(LayerShell *shell,
 	m_window(window)
 {
 	set_size(m_window->window()->width(), m_window->window()->height());
+	// window->window() -> QWindow
 	m_layerview = dynamic_cast<LayerView*>(window->window());
 	if (m_layerview == nullptr) {
 		qWarning("Warning: using LayerView is strongly recommended");

@@ -14,7 +14,7 @@ namespace QtLayerShell {
 class LayerSurface;
 class LayerShell;
 
-class LayerView : public QQuickView
+class LayerView
 {
 public:
 	LayerView(uint32_t layer, const QString &layer_namespace);
