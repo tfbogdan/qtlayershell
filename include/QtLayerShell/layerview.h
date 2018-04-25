@@ -1,12 +1,15 @@
 #ifndef _LAYERVIEW_P_H
 #define _LAYERVIEW_P_H
-#include <QtWaylandClient/private/qwaylandwindow_p.h>
 #include <QString>
 #include <QQuickView>
 #include <stdint.h>
 
 namespace QtWayland {
 	class zwlr_layer_surface_v1;
+};
+
+namespace QtWaylandClient {
+	class QWaylandWindow;
 };
 
 namespace QtLayerShell {
