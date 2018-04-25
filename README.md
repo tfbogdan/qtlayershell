@@ -10,6 +10,18 @@ Wayland extension protocol.
 header for its usage. It is a superclass of `QQuickView`. An example is
 available in the `demo` directory.
 
+**Note**
+
+In order for this to work correctly, you must set some environment variables
+before initializing your `QGuiApplication`.
+
+```cpp
+qputenv("QT_QPA_PLATFORM", QByteArray("wayland"));
+qputenv("QT_WAYLAND_SHELL_INTEGRATION", QByteArray("layer-shell"));
+```
+
+We are not able to do this for you.
+
 ## Installation
 
 ```

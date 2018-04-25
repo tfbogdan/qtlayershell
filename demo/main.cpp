@@ -4,6 +4,9 @@
 
 int main(int argc, char *argv[])
 {
+	qputenv("QT_QPA_PLATFORM", QByteArray("wayland"));
+	qputenv("QT_WAYLAND_SHELL_INTEGRATION", QByteArray("layer-shell"));
+
     QGuiApplication app(argc, argv);
 
 	QtLayerShell::LayerView view(
