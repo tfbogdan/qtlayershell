@@ -31,13 +31,13 @@ int main(int argc, char *argv[])
 	view.setAnchor(QtLayerShell::LayerView::anchor_bottom
 			| QtLayerShell::LayerView::anchor_left
 			| QtLayerShell::LayerView::anchor_right);
-	view.setExclusiveZone(20);
+	view.setExclusiveZone(50);
 	view.setMargin(0, 100, 0, 100);
 	view.setKeyboardInteractivity(true);
 
     view.setResizeMode(QQuickView::SizeRootObjectToView);
     view.setSource(QUrl("qrc:/hello.qml"));
-	view.setHeight(20);
+	view.setHeight(50);
     view.show();
 
     return app.exec();

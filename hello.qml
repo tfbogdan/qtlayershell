@@ -18,24 +18,36 @@
  ***************************************************************************/
 
 import QtQuick 2.0
+import QtQuick.Layouts 1.0
+import QtQuick.Controls 2.0
 
 Rectangle {
     color: "blue"
 
-    Text {
-        anchors.fill: parent
+    RowLayout {
+        width: implicitWidth
+        height: parent.height
 
-        color: "white"
+        anchors.horizontalCenter: parent.horizontalCenter
 
-        horizontalAlignment: Text.AlignHCenter
-        verticalAlignment: Text.AlignVCenter
+        Text {
+            color: "white"
 
-        fontSizeMode: Text.Fit
-        minimumPixelSize: 10
-        font.pixelSize: 999
+            verticalAlignment: Text.AlignVCenter
 
-        renderType: Text.NativeRendering
+            renderType: Text.NativeRendering
 
-        text: "Hello world!"
+            text: "Hello world!"
+        }
+
+        Button {
+            text: "Woo"
+
+            onClicked: Qt.quit()
+        }
+
+        TextField {
+            width: 50
+        }
     }
 }
