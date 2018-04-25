@@ -23,9 +23,8 @@ wayland_protos = dependency('wayland-protocols')
 
 subdir('protos')
 
-# TODO: Send bug to meson
+# https://github.com/mesonbuild/meson/issues/3470
 moc_args = [
-	'-DQT_STATICPLUGIN',
 	'-I/usr/include/qt',
 	'-I/usr/include/qt/QtWaylandClient/5.10.1',
 	'-I/usr/include/qt/QtWaylandClient/5.10.1/QtWaylandClient',
@@ -35,7 +34,7 @@ moc_args = [
 	'-I/usr/include/qt/QtCore',
 ]
 
-# TODO: Send bug to meson
+# https://github.com/mesonbuild/meson/issues/3471
 private_modules = ['QtCore', 'QtGui', 'QtWaylandClient']
 private_module_includes = []
 foreach module : private_modules
