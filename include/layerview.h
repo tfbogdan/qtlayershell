@@ -1,17 +1,15 @@
 #ifndef _LAYERVIEW_P_H
 #define _LAYERVIEW_P_H
-
 #include <qwayland-wlr-layer-shell-unstable-v1.h>
 #include <QtWaylandClient/private/qwaylandwindow_p.h>
-
 #include <QString>
 #include <QQuickView>
 #include <stdint.h>
 
 namespace QtLayerShell {
 
-class QWaylandLayerSurface;
-class QWaylandLayerShell;
+class LayerSurface;
+class LayerShell;
 
 class LayerView : public QQuickView
 {
@@ -55,13 +53,12 @@ private:
 		int32_t top = 0, right = 0, bottom = 0, left = 0;
 	} m_margin;
 
-	QWaylandLayerSurface *m_layer_surface = NULL;
+	LayerSurface *m_layer_surface = NULL;
 
-	friend class QWaylandLayerSurface;
+	friend class LayerSurface;
 	// haaaaack
 	friend QtWayland::zwlr_layer_surface_v1 create_layer_surface(
-		QWaylandLayerShell *shell,
-		QtWaylandClient::QWaylandWindow *window);
+		LayerShell *shell, QtWaylandClient::QWaylandWindow *window);
 };
 
 }

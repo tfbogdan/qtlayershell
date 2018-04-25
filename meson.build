@@ -18,6 +18,8 @@ qt5_modules = dependency('qt5', modules: [
 wayland_client = dependency('wayland-client')
 wayland_protos = dependency('wayland-protocols')
 
+qtlayershell_inc = include_directories('include')
+
 subdir('protos')
 subdir('qtlayershell')
 subdir('demo')

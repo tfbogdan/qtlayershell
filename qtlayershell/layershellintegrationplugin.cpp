@@ -1,11 +1,10 @@
-#include "qwaylandlayershellintegration_p.h"
-
+#include "layershellintegration_p.h"
 #include <QtWaylandClient/private/qwaylandshellintegrationplugin_p.h>
 #include <QtPlugin>
 
 using namespace QtLayerShell;
 
-class QWaylandLayerShellIntegrationPlugin :
+class LayerShellIntegrationPlugin :
 	public QtWaylandClient::QWaylandShellIntegrationPlugin
 {
 	Q_OBJECT
@@ -18,10 +17,10 @@ public:
 			const QString &key, const QStringList &paramList) override {
 		Q_UNUSED(key);
 		Q_UNUSED(paramList);
-		return new QWaylandLayerShellIntegration();
+		return new LayerShellIntegration();
 	}
 };
 
-Q_IMPORT_PLUGIN(QWaylandLayerShellIntegrationPlugin);
+Q_IMPORT_PLUGIN(LayerShellIntegrationPlugin);
 
-#include "qwaylandlayershellintegrationplugin.moc"
+#include "layershellintegrationplugin.moc"

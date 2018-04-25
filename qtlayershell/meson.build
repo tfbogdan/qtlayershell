@@ -22,35 +22,34 @@ qtlayershell_moc_args = [
 
 qtlayershell_moc = qt5.preprocess(
 	moc_sources: [
-		'qwaylandlayershellintegrationplugin.cpp',
+		'layershellintegrationplugin.cpp',
 	],
 	moc_headers: [
-		'qwaylandlayersurface_p.h',
+		'../include/layersurface_p.h',
 	],
 	moc_extra_arguments: qtlayershell_moc_args,
 )
 
-qtlayershell_inc = [include_directories('.'), qt_private]
 qtlayershell_deps = [qt5_modules, wayland_client, lib_protos]
 
 libqtlayershell = library(
 	'qtlayershell', [
-		'qlayerview.cpp',
-		'qwaylandlayershell.cpp',
-		'qwaylandlayershellintegration.cpp',
-		'qwaylandlayershellintegrationplugin.cpp',
-		'qwaylandlayersurface.cpp',
+		'layerview.cpp',
+		'layershell.cpp',
+		'layershellintegration.cpp',
+		'layershellintegrationplugin.cpp',
+		'layersurface.cpp',
 		qtlayershell_moc,
 	],
 	version: '0.0.0',
 	link_whole: [protos],
 	dependencies: qtlayershell_deps,
-	include_directories: qtlayershell_inc,
+	include_directories: [qtlayershell_inc, qt_private],
 	install: true,
 )
 
 qtlayershell = declare_dependency(
 	link_with: libqtlayershell,
 	dependencies: qtlayershell_deps,
-	include_directories: qtlayershell_inc,
+	include_directories: [qtlayershell_inc, qt_private],
 )

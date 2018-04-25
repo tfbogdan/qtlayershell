@@ -1,7 +1,6 @@
-#include "qlayerview_p.h"
-#include "qwaylandlayersurface_p.h"
+#include "layerview.h"
+#include "layersurface_p.h"
 #include <QtWaylandClient/private/qwaylanddisplay_p.h>
-#include <stdio.h>
 
 namespace QtLayerShell {
 
