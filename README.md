@@ -22,6 +22,10 @@ qputenv("QT_WAYLAND_SHELL_INTEGRATION", QByteArray("layer-shell"));
 
 We are not able to do this for you.
 
+**Note**
+
+This utilizes private QtWaylandClient APIs and it may break between Qt versions.
+
 ## Installation
 
 ```
