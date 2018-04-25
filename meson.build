@@ -20,12 +20,4 @@ wayland_protos = dependency('wayland-protocols')
 
 subdir('protos')
 subdir('qtlayershell')
-
-hello_resources = qt5.preprocess(
-	qresources: 'main.qrc'
-)
-
-hello_layers = executable('hello-layers',
-	sources: ['main.cpp', hello_resources],
-	dependencies: [qtlayershell]
-)
+subdir('demo')
