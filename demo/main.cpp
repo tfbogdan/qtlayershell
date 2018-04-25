@@ -1,6 +1,6 @@
 #include <QGuiApplication>
 #include <QQuickView>
-#include "layerview.h"
+#include <QtLayerShell/LayerView>
 
 int main(int argc, char *argv[])
 {

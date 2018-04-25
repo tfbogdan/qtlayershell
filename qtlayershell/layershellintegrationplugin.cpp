@@ -1,6 +1,6 @@
-#include "layershellintegration_p.h"
-#include <QtWaylandClient/private/qwaylandshellintegrationplugin_p.h>
+#include <QtLayerShell/layershellintegration_p.h>
 #include <QtPlugin>
+#include <QtWaylandClient/private/qwaylandshellintegrationplugin_p.h>
 
 using namespace QtLayerShell;
 

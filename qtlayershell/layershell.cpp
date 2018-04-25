@@ -1,8 +1,8 @@
-#include "layershell_p.h"
-#include "layersurface_p.h"
-#include <qwayland-wlr-layer-shell-unstable-v1.h>
+#include <QtLayerShell/layershell_p.h>
+#include <QtLayerShell/layersurface_p.h>
 #include <QtWaylandClient/private/qwaylandwindow_p.h>
 #include <QtWaylandClient/private/qwaylanddisplay_p.h>
+#include <qwayland-wlr-layer-shell-unstable-v1.h>
 
 namespace QtLayerShell {
 

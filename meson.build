@@ -23,3 +23,15 @@ qtlayershell_inc = include_directories('include')
 subdir('protos')
 subdir('qtlayershell')
 subdir('demo')
+
+includedir = get_option('includedir')
+install_subdir('include/QtLayerShell', install_dir: includedir)
+
+pkgconfig = import('pkgconfig')
+pkgconfig.generate(
+	libraries: libqtlayershell,
+	version: meson.project_version(),
+	filebase: meson.project_name(),
+	name: meson.project_name(),
+	description: 'Qt support for the Wayland layer-shell extension',
+)

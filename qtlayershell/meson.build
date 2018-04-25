@@ -25,7 +25,7 @@ qtlayershell_moc = qt5.preprocess(
 		'layershellintegrationplugin.cpp',
 	],
 	moc_headers: [
-		'../include/layersurface_p.h',
+		'../include/QtLayerShell/layersurface_p.h',
 	],
 	moc_extra_arguments: qtlayershell_moc_args,
 )
