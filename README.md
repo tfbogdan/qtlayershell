@@ -1,0 +1,30 @@
+# QtLayerShell
+
+This library provides support for the
+[layer-shell](https://github.com/swaywm/wlr-protocols/blob/master/unstable/wlr-layer-shell-unstable-v1.xml)
+Wayland extension protocol.
+
+## Usage
+
+`QtLayerShell/LayerView` is the primary entry point to this library. Review the
+header for its usage. It is a superclass of `QQuickView`. An example is
+available in the `demo` directory.
+
+## Installation
+
+```
+meson build
+ninja -C build
+sudo ninja install
+```
+
+Consult the [meson documentation](http://mesonbuild.com/Running-Meson.html) if
+you have special needs.
+
+**Note**: currently this project builds with some meson hacks that may not work
+on your system. Track the following meson tickets for updates:
+
+- [#3470](https://github.com/mesonbuild/meson/issues/3470)
+- [#3471](https://github.com/mesonbuild/meson/issues/3471)
+
+Basically, we assume that Qt is installed to `/usr`.

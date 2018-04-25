@@ -1,10 +1,13 @@
 #ifndef _LAYERVIEW_P_H
 #define _LAYERVIEW_P_H
-#include <qwayland-wlr-layer-shell-unstable-v1.h>
 #include <QtWaylandClient/private/qwaylandwindow_p.h>
 #include <QString>
 #include <QQuickView>
 #include <stdint.h>
+
+namespace QtWayland {
+	class zwlr_layer_surface_v1;
+};
 
 namespace QtLayerShell {
 
